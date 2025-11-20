@@ -1,3 +1,7 @@
 ru\maximenko\data_service\DataServiceApplication.class
-ru\maximenko\data\api\DefaultApi.class
+ru\maximenko\data_service\Student.class
 ru\maximenko\data\api\ApiUtil.class
+ru\maximenko\data\model\StudentDataResponse.class
+ru\maximenko\data\api\StudentDataApi.class
+ru\maximenko\data\model\StudentDataCreateRequest.class
+ru\maximenko\data_service\StudentRepository.class
