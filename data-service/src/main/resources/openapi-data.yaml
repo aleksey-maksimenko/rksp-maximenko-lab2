@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: Data Service API
+  description: Пример API для генерации
+  version: 1.0.0
+servers:
+  - url: http://localhost:8900
+paths:
+  /hello:
+    get:
+      summary: "Приветственный endpoint"
+      operationId: getHello
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            text/plain:
+              schema:
+                type: string
