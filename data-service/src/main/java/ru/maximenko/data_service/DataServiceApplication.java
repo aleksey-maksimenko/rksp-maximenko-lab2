@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DataServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DataServiceApplication.class, args);
+        SpringApplication.run(DataServiceApplication.class, args);
+        System.out.println("ok");
 	}
 
 }
