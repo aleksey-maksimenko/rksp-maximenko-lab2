@@ -1,0 +1,96 @@
+openapi: 3.0.3
+info:
+  description: |
+    Внутренний API для управления студентами. Этот сервис отвечает за чтение и запись данных в базу данных.
+  title: Data Service API
+  version: 1.0.0
+servers:
+- description: Data Service (внутренний)
+  url: http://localhost:8090
+paths:
+  /students:
+    post:
+      description: Создает запись о студенте в базе данных.
+      operationId: createStudentDataInData
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StudentDataCreateRequest"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StudentDataResponse"
+          description: Студент успешно создан
+      summary: Создать студента в БД
+      tags:
+      - StudentData
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /students/{id}:
+    get:
+      description: Возвращает информацию о студенте по идентификатору.
+      operationId: getStudentDataByIdFromData
+      parameters:
+      - description: Идентификатор студента
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StudentDataResponse"
+          description: Студент найден
+        "404":
+          description: Студент не найден
+      summary: Получить данные студента из БД
+      tags:
+      - StudentData
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    StudentDataCreateRequest:
+      example:
+        passport: +7 999 123-45-67
+        fullName: Иванов Иван Иванович
+      properties:
+        fullName:
+          example: Иванов Иван Иванович
+          type: string
+        passport:
+          example: +7 999 123-45-67
+          type: string
+      required:
+      - fullName
+      - passport
+      type: object
+    StudentDataResponse:
+      example:
+        passport: +7 999 123-45-67
+        fullName: Иванов Иван Иванович
+        id: 1
+      properties:
+        id:
+          example: 1
+          format: int64
+          type: integer
+        fullName:
+          example: Иванов Иван Иванович
+          type: string
+        passport:
+          example: +7 999 123-45-67
+          type: string
+      type: object
+
