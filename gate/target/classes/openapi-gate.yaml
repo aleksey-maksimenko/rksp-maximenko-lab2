@@ -6,7 +6,7 @@ info:
     API шлюза (GATE), принимающего запросы от внешних клиентов
     и перенаправляющего их во внутренний сервис DATA-SERVICE.
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:8095
     description: GATE Service (внешний)
 
 paths:
@@ -30,7 +30,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StudentGateResponse'
-
+  /api/students/{studentId}:
+    get:
+      summary: Получить данные студента по ID
+      description: Проксирует запрос на получение студента во внутренний DATA SERVICE.
+      operationId: getStudentById
+      tags:
+        - studentGate
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          description: ID студента
+          schema:
+            type: integer
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Данные студента
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentGateResponse'
+        '404':
+          description: Студент не найден
+        '500':
+          description: Внутренняя ошибка сервера
 components:
   schemas:
     StudentGateCreateRequest:

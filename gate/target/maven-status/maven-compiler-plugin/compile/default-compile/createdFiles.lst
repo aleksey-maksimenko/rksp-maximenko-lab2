@@ -5,6 +5,7 @@ ru\maximenko\gate\client\ParamExpander.class
 ru\maximenko\data\api\ApiUtil.class
 ru\maximenko\gate\client\ServerConfiguration.class
 ru\maximenko\gate\GateApplication.class
+ru\maximenko\gate\StudentGateController.class
 ru\maximenko\gate\client\EncodingUtils.class
 ru\maximenko\data\model\StudentGateCreateRequest.class
 ru\maximenko\gate\client\ServerVariable.class

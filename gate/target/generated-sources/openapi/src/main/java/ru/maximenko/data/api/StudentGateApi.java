@@ -35,7 +35,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-11-25T14:18:51.745311200+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-11-25T17:51:18.249279700+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
 @Validated
 @Tag(name = "studentGate", description = "the studentGate API")
 public interface StudentGateApi {
@@ -72,6 +72,52 @@ public interface StudentGateApi {
     
     default ResponseEntity<StudentGateResponse> createStudent(
         @Parameter(name = "StudentGateCreateRequest", description = "", required = true) @Valid @RequestBody StudentGateCreateRequest studentGateCreateRequest
+    ) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"passport\" : \"1234 567890\", \"fullName\" : \"Иванов Иван Иванович\", \"id\" : 1 }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+
+    public static final String PATH_GET_STUDENT_BY_ID = "/api/students/{studentId}";
+    /**
+     * GET /api/students/{studentId} : Получить данные студента по ID
+     * Проксирует запрос на получение студента во внутренний DATA SERVICE.
+     *
+     * @param studentId ID студента (required)
+     * @return Данные студента (status code 200)
+     *         or Студент не найден (status code 404)
+     *         or Внутренняя ошибка сервера (status code 500)
+     */
+    @Operation(
+        operationId = "getStudentById",
+        summary = "Получить данные студента по ID",
+        description = "Проксирует запрос на получение студента во внутренний DATA SERVICE.",
+        tags = { "studentGate" },
+        responses = {
+            @ApiResponse(responseCode = "200", description = "Данные студента", content = {
+                @Content(mediaType = "application/json", schema = @Schema(implementation = StudentGateResponse.class))
+            }),
+            @ApiResponse(responseCode = "404", description = "Студент не найден"),
+            @ApiResponse(responseCode = "500", description = "Внутренняя ошибка сервера")
+        }
+    )
+    @RequestMapping(
+        method = RequestMethod.GET,
+        value = StudentGateApi.PATH_GET_STUDENT_BY_ID,
+        produces = { "application/json" }
+    )
+    
+    default ResponseEntity<StudentGateResponse> getStudentById(
+        @Parameter(name = "studentId", description = "ID студента", required = true, in = ParameterIn.PATH) @PathVariable("studentId") Long studentId
     ) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {

@@ -9,7 +9,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class GateApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GateApplication.class, args);
+
+        SpringApplication.run(GateApplication.class, args);
+        System.out.println("ok");
 	}
 
 }

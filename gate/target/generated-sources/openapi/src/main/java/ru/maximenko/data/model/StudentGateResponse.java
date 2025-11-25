@@ -19,7 +19,7 @@ import jakarta.annotation.Generated;
  * StudentGateResponse
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-11-25T14:18:51.745311200+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-11-25T17:51:18.249279700+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
 public class StudentGateResponse {
 
   private @Nullable Long id;

@@ -6,7 +6,7 @@ info:
     Внутренний API для управления студентами.
     Этот сервис отвечает за чтение и запись данных в базу данных.
 servers:
-  - url: http://localhost:8090
+  - url: http://localhost:8902
     description: Data Service (внутренний)
 
 paths:

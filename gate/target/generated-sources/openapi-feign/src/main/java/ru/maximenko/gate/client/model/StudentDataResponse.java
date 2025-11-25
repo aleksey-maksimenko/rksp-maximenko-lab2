@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   StudentDataResponse.JSON_PROPERTY_FULL_NAME,
   StudentDataResponse.JSON_PROPERTY_PASSPORT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-25T14:18:53.127313800+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-25T17:51:19.462802500+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
 public class StudentDataResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable

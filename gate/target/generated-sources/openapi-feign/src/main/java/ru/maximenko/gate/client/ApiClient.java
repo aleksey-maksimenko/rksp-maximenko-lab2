@@ -37,14 +37,14 @@ import ru.maximenko.gate.client.auth.ApiKeyAuth;
 import ru.maximenko.gate.client.ApiResponseDecoder;
 
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-25T14:18:53.127313800+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-25T17:51:19.462802500+03:00[Europe/Moscow]", comments = "Generator version: 7.15.0")
 public class ApiClient {
   protected static final Logger log = Logger.getLogger(ApiClient.class.getName());
 
   public interface Api {}
 
   protected ObjectMapper objectMapper;
-  protected String basePath = "http://localhost:8090";
+  protected String basePath = "http://localhost:8902";
   protected Map<String, RequestInterceptor> apiAuthorizations;
   protected Feign.Builder feignBuilder;
 

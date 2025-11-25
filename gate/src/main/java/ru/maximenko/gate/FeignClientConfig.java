@@ -11,7 +11,7 @@ public class FeignClientConfig {
     @Bean
     public StudentDataApi someStudentApi() {
         ApiClient apiClient = new ApiClient();
-        apiClient.setBasePath("http://localhost:8090"); // или data.service.url
+        apiClient.setBasePath("http://localhost:8902");
         return apiClient.buildClient(StudentDataApi.class);
     }
 }
